@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*=============================================================================
+  layout
+  パーツの配置や、ラッパーとしての幅や高さなどを決定するクラス
+=============================================================================*/
+/* ページ全体の設定 */
+body.top {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: [head] 100px [hero] auto [service] auto [post01] auto [video] auto [about] auto [map] auto [contact] auto [foot] 100px;
+  row-gap: 20px; }
+
+/* パーツの配置 */
+body.top > * {
+  grid-column: 2 / -2; }
+
+/* デスクトップ版 */
+@media (min-width: 768px) {
+  body.top {
+    grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
+    column-gap: 5%; } }

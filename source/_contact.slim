@@ -1,0 +1,19 @@
+article#contact.contact
+  h1 お問い合わせ
+  p ご意見、ご感想など、以下にご記入の上、送信してください。当社へのご質問などもお気軽にどうぞ。
+
+  form method="post" action="/success.html" netlify="netlify"
+    p
+      label
+        | 名前:
+        input type="text" name="name" required="required"
+    p
+      label
+        | メールアドレス:
+        input type="email" name="email" required="required"
+    p
+      label
+        | コメント:
+        textarea name="comment" required="required"
+    p
+      input type="submit" value="送信"
