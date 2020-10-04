@@ -433,12 +433,6 @@
 .lead.text {
   font-size: 1.1rem; }
 
-/*
-  中央そろえ指定
------------------------------------------------------------------------------*/
-.centered.text {
-  text-align: center !important; }
-
 /*-----------------------------------------------------------------------------
   デスクトップ版
 -----------------------------------------------------------------------------*/
@@ -494,100 +488,67 @@ nav {
 /*=============================================================================
   ヒーローイメージ
 =============================================================================*/
-/*-----------------------------------------------------------------------------
-  モバイル版
------------------------------------------------------------------------------*/
-/*
-  ヒーローイメージ
------------------------------------------------------------------------------*/
 .hero {
-  grid-row: hero; }
-  .hero .box {
-    position: relative;
-    margin: 0 -20px;
-    height: 512px; }
-    .hero .box .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      opacity: 0;
-      animation: fade 20s infinite; }
-    .hero .box .src1 {
-      animation-delay: 15s; }
-    .hero .box .src2 {
-      animation-delay: 5s; }
-    .hero .box .src3 {
-      animation-delay: 10s; }
-
-@keyframes fade {
-  0% {
-    opacity: .0; }
-  5% {
-    opacity: .1; }
-  20% {
-    opacity: .9; }
-  30% {
-    opacity: 1.0; }
-  70% {
-    opacity: .8; }
-  90% {
-    opacity: .1; }
-  100% {
-    opacity: .0; } }
-  .hero img {
-    width: 100%;
-    height: 512px;
-    /* iPhone 6/7/8 で、ちょうどきれいに見える高さ */
-    object-fit: cover;
-    vertical-align: bottom; }
-
-/*-----------------------------------------------------------------------------
-  デスクトップ版
------------------------------------------------------------------------------*/
-/* タイトル */
-.title {
   grid-row: hero;
-  justify-content: center;
-  align-self: center;
-  color: #fef4f4;
-  font-size: 44px;
-  font-weight: normal;
-  line-height: 1.2;
-  text-shadow: 0 0 5px #3d6eda;
-  text-align: center;
-  font-family: 'Dancing Script', cursive; }
-
-/* サブタイトル */
-.subtitle {
-  grid-row: hero;
-  text-align: center; }
-  .subtitle a {
+  grid-column: 1 / -1;
+  margin-top: -20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto; }
+  @media (min-width: 768px) {
+    .hero {
+      grid-template-columns: 3fr 2fr;
+      grid-template-rows: auto; } }
+  .hero .swiper-container {
+    width: 100vw;
+    grid-column: 1 / -1;
+    grid-row: 1 / span 2; }
+    @media (min-width: 768px) {
+      .hero .swiper-container {
+        grid-row: 1; } }
+  .hero .swiper-slide img {
+    width: 100vw;
+    filter: brightness(110%) blur(3px);
+    z-index: -1;
+    position: relative; }
+  .hero .title {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+    z-index: 200;
+    width: 80%;
     color: #fef4f4;
-    text-decoration: none;
-    border: solid 2px #fef4f4;
-    padding: 10px 40px;
-    display: inline-block;
-    margin-top: 10px;
-    border-radius: 10px;
-    background-color: rgba(61, 110, 218, 0.5); }
-    .subtitle a:hover {
-      background-color: rgba(28, 66, 149, 0.7); }
-  .subtitle img {
-    width: 200px; }
-
-/* デスクトップ版 */
-@media (min-width: 768px) {
-  .title {
-    grid-column: 2 / span 2;
-    max-width: 240px; }
-  .subtitle {
-    grid-column: 4 / span 4;
-    grid-column: 6 / span 2; }
-    .subtitle img {
-      width: 80%;
-      max-width: 320px; } }
+    font-size: 44px;
+    font-weight: normal;
+    line-height: 1.2;
+    text-shadow: 0 0 5px #3d6eda; }
+    @media (min-width: 768px) {
+      .hero .title {
+        grid-column: 1;
+        grid-row: 1; } }
+  .hero .subtitle {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    align-self: center;
+    z-index: 200;
+    position: relative; }
+    @media (min-width: 768px) {
+      .hero .subtitle {
+        grid-column: 2;
+        grid-row: 1; } }
+    .hero .subtitle a {
+      color: #fef4f4;
+      text-decoration: none;
+      border: solid 2px #fef4f4;
+      padding: 10px 40px;
+      display: inline-block;
+      margin-top: 10px;
+      border-radius: 10px;
+      background-color: rgba(61, 110, 218, 0.5); }
+      .hero .subtitle a:hover {
+        background-color: rgba(28, 66, 149, 0.7); }
 
 /* 記事一覧 */
 section {
@@ -697,6 +658,16 @@ article.post01::before {
       width: 100%;
       height: 100%; }
 
+.photograph {
+  grid-row: photograph; }
+  .photograph .gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px; }
+    @media (min-width: 768px) {
+      .photograph .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 3%; } }
 /* お問い合わせフォーム */
 .contact {
   grid-row: contact; }
