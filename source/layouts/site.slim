@@ -23,8 +23,8 @@ html
     script src="https://code.jquery.com/jquery-3.5.1.min.js"
 
     / Fomantic-UI
-    / link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css"
-    / script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"
+    link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css"
+    script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"
 
     / IE Buster
     script src="https://cdn.jsdelivr.net/npm/ie-buster@1.1.0/dist/ie-buster.min.js"
@@ -37,11 +37,11 @@ html
 
   body.site
     / 部分ファイル _header.slim を読み込む
-    = partial 'header'
+    / = partial 'header'
 
     / この = yield が、index.html.slim等、各々の内容に置き換えられる
     .ui.container
       = yield
 
     / 部分ファイル _footer.slim を読み込む
-    = partial 'footer'
+    / = partial 'footer'

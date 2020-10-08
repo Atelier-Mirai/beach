@@ -14,3 +14,4 @@ gem "middleman-imageoptim"
 gem "middleman-minify-html"
 
 gem "nokogiri"
+gem "gimei"

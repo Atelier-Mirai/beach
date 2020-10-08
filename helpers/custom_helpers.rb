@@ -1,8 +1,15 @@
 include HtmlBuilder
+include IrohaObject
 
+# カスタムヘルパーの例
 def some_method
   # ...何らかの処理を追加...
   'awesome method'
+end
+
+# 日本語版 loremメソッド
+def iroha
+  IrohaObject
 end
 
 class String
@@ -73,16 +80,4 @@ def book_intro(book, format: :simple)
       end
     end
   end
-end
-
-def iroha(repeat = nil)
-  str = <<~EOS
-    色は匂へど 散りぬるを
-    我が世誰そ 常ならむ
-    有為の奥山 今日越えて
-    浅き夢見じ 酔ひもせず
-  EOS
-
-  str * repeat
-
 end
